@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>жочник</title>
+    <link type="text/css" href="{% static 'library/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="text-1">Электронная библиотека</h1>
+    <h2 class="text-1"></h2>
+
+
+	<form action="" method="post" class="reg">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {{ form.as_p }}
+		<button type="submit">регистрация</button>
+	</form>
+
+
+    <div class="contact-info">
+        <h2></h2>
+        <h3>Контактная информация</h3>
+        <ul>
+            <li>Телефон: 8(916)983-89-86</li>
+            <li>Email: elibrary@gmail.com</li>
+        </ul>
+    </div>
+</body>
+</html>

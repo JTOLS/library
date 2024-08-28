@@ -1,0 +1,22 @@
+body{
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: rgb(255, 255, 240);
+}
+
+.text-1 {
+   font-size: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    background-image: url("../images/книги.jpg");
+    height: 155px;
+}
+
+.reg {
+    text-align: center;
+    height: 300px;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная библиотека - Каталог книг</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 240);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: linear-gradient(to right, #6c3c0c, #5b4f43); /* Градиент */
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+        header nav a:hover, header nav a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            background: url('bookshelf.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .main-content {
+            flex-grow: 1;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .order, .book-info, .catalog, .search-result {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .order h3, .book-info h3, .catalog h3, .search-result h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .order p, .book-info p, .catalog p, .search-result p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .search-section {
+            margin-bottom: 40px;
+        }
+        .search-section h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .search-section form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .search-section input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .search-section button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-section button:hover {
+            background-color: #45a049;
+        }
+        .category-list {
+            padding: 20px;
+            background-color: #fff8e1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+            width: 200px;
+        }
+        .category-list h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .category-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .category-list ul li {
+            margin-bottom: 10px;
+        }
+        .category-list ul li a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 16px;
+        }
+        .category-list ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">О библиотеке</a>
+            <a href="#" class="active">Книги</a>
+            <a href="#">Мои заказы</a>
+            <a href="#">Личный кабинет</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="sidebar"></div>
+        <div class="main-content">
+            <div class="search-section">
+                <h2>Поиск по автору или жанрам</h2>
+                <form>
+                    <input type="text" placeholder="Введите имя автора или жанр...">
+                    <button type="submit">Поиск</button>
+                </form>
+            </div>
+            <div class="section">
+                <h2>Список книг</h2>
+                <div class="catalog">
+                    <h3>Название книги 1</h3>
+                    <p>Автор: Автор 1</p>
+                    <p>Жанр: Жанр 1</p>
+                    <p>Описание: Краткое описание книги 1.</p>
+                    <button type="button">Заказать</button>
+                </div>
+                <div class="catalog">
+                    <h3>Название книги 2</h3>
+                    <p>Автор: Автор 2</p>
+                    <p>Жанр: Жанр 2</p>
+                    <p>Описание: Краткое описание книги 2.</p>
+                    <button type="button">Заказать</button>
+                </div>
+                <div class="catalog">
+                    <h3>Название книги 3</h3>
+                    <p>Автор: Автор 3</p>
+                    <p>Жанр: Жанр 3</p>
+                    <p>Описание: Краткое описание книги 3.</p>
+                    <button type="button">Заказать</button>
+                </div>
+                <!-- Добавьте больше книг в каталог по мере необходимости -->
+            </div>
+        </div>
+        <div class="category-list">
+            <h3>Разделы</h3>
+            <ul>
+                <li><a href="#">Научная литература</a></li>
+                <li><a href="#">Художественная литература</a></li>
+                <li><a href="#">Детская литература</a></li>
+                <li><a href="#">Историческая литература</a></li>
+                <li><a href="#">Фантастика</a></li>
+                <li><a href="#">Биографии и мемуары</a></li>
+                <li><a href="#">Детективы и триллеры</a></li>
+                <li><a href="#">Романы</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
